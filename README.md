@@ -1,7 +1,7 @@
 # Image Grid Layout
 
 A responsive image grid layout built using only HTML and CSS — based on the **Image Grid** project from roadmap.sh.  
-https://roadmap.sh/projects/image-grid :contentReference[oaicite:0]{index=0}
+https://roadmap.sh/projects/image-grid
 
 ## 📄 Project Overview
 
