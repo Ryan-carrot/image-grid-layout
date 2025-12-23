@@ -26,24 +26,38 @@ header {
     text-align: center;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Grid Layout */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
 }
 
-.grid-item {
-    color: var(--background-color);
-    border-radius: 10px;
-    cursor: pointer;
+.grid-container img:nth-child(1) {
+    grid-area: 1 / 1 / 3 / 2;
 }
-
-.grid-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+.grid-container img:nth-child(2) {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.grid-container img:nth-child(3) {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.grid-container img:nth-child(4) {
+    grid-area: 2 / 2 / 4 / 3;
+}
+.grid-container img:nth-child(5) {
+    grid-area: 1 / 3 / 3 / 4;
+}
+.grid-container img:nth-child(6) {
+    grid-area: 3 / 3 / 4 / 4;
 }
 
 /* Footer Styles */
@@ -54,4 +68,56 @@ footer {
     padding: 10px 20px;
     bottom: 0;
     width: 100%;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .grid-container img:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .grid-container img:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .grid-container img:nth-child(3) {
+        grid-area: 1 / 2 / 2 / 3;
+     }
+    .grid-container img:nth-child(4) {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .grid-container img:nth-child(5) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .grid-container img:nth-child(6) {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .grid-container img:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .grid-container img:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .grid-container img:nth-child(3) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .grid-container img:nth-child(4) {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    .grid-container img:nth-child(5) {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+    .grid-container img:nth-child(6) {
+        grid-area: 6 / 1 / 7 / 2;
+    }
 }
